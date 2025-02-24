@@ -1,4 +1,4 @@
-GITHUB_REPO=https://github.com/dali-lab/benchify-technigala
+GITHUB_REPO=https://github.com/dali-lab/benchify-testing
 
 pr:
 	$(eval COMMIT_MESSAGE := "Bughunt PR $(shell date +%Y-%m-%dT%H:%M:%S)")
