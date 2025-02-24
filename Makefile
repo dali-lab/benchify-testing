@@ -9,7 +9,7 @@ pr:
 	git commit -am $(COMMIT_MESSAGE)
 	git push -u origin $(BRANCH_NAME)
 	echo "Created branch $(BRANCH_NAME) and pushed all staged changes"
-	echo "\n\nCreate pull request at $(GITHUB_REPO)/pull/new/$(BRANCH_NAME)"
+	echo "\n\nCreate a pull request at the following link to trigger Benchify:\n$(GITHUB_REPO)/pull/new/$(BRANCH_NAME)\n"
 
 reset:
 	git stash
