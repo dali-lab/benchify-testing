@@ -11,6 +11,7 @@ def generate_labels(data: Tensor, comps: Tensor) -> Tensor:
     Returns:
         Tensor: Labels for the data.
     """
+    # this should generate labels properly, according to DNF. Play close attention to the modulo operation.
     labels = torch.sum((data @ comps.T) % 2, dim=1) > 0
     return labels
 
