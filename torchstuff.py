@@ -4,14 +4,13 @@ from torch import Tensor
 
 def generate_labels(data: Tensor, comps: Tensor) -> Tensor:
     """Generate the labels for the data.
-    All tensors should have dtype int.
+    All tensors should have dtype int. Note that We aren't solving parity here, we are computing a conjunction. So a component should add one if that element of data @ comps.T is maximal.
     Args:
         data (Tensor): Data to generate the labels for. (Shape: (num_samples, N))
         comps (Tensor): The DNF components of the function. (Shape: (num_components, N))
     Returns:
         Tensor: Labels for the data.
     """
-    # this should generate labels properly, according to DNF. Play close attention to the modulo operation.
     labels = torch.sum((data @ comps.T) % 2, dim=1) > 0
     return labels
 
